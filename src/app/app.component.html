@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link href="app.component.css" th:href="@{/style.css}" rel="stylesheet" />
+    <title>Tour operator 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        #second_header{
+            background-image: url("holiday-finally.jpg");
+            background-size: 100%;
+            background-position: center;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+<header id= "second_header" class="jumbotron text-left" style="margin-bottom:0" >
+    <div>
+        <h2 >Tour operator 2 </h2>
+    </div>
+</header>
+
+
+
+<h1 style="text-align: center">Panel administratora</h1>
+
+<router-outlet>
+    
+    <div class="row">
+        <div class="col-sm" align="center"  >
+            <a type="menu" routerLink="/home">Baza wycieczek - strona główna</a>
+            <!-- <a type="menu" href="@{'/src/app/app.component.html'}" >Baza wycieczek - strona główna</a> -->
+        </div>
+        <div class="col-sm" align="center"  >
+            <a  type="menu" routerLink = "/new-offer1" >Dodaj nowa ofertę</a>
+        </div>
+    </div>
+    </router-outlet>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Tour operator 2</title>
+    <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<style>
+    #second_header{
+        background-image: url("holiday-finally.jpg");
+        background-size: 100%;
+        background-position: center;
+        text-align: center;
+    }
+
+</style>
+
+</head>
+<body>
+<header id= "second_header" class="jumbotron text-left" style="margin-bottom:0" >
+    <div>
+        <h2 >Tour operator 2 </h2>
+    </div>
+</header>
+
+<h1 style="text-align: center">Panel administratora</h1>
+<br>
+<br>
+    <div class="container">
+
+    <div class="row">
+        <div class="col-sm" align="center"  >
+            <a  type="menu" th:href="@{'/reservations'}" >Rezerwacje</a>
+        </div>
+        <div class="col-sm" align="center"  >
+            <a type="menu" th:href="@{'/admin'}" >Baza wycieczek - strona główna</a>
+        </div>
+        <div class="col-sm" align="center"  >
+            <a  type="menu" th:href="@{'/admin/newOffer'}" >Dodaj nowa ofertę</a>
+        </div>
+    </div>
+    </div>
+<br>
+<br>
+<br>
+
+<h2 style="text-align: center">Dodaj nową ofertę</h2>
+<br>
+<div class="container">
+
+    <form th:action="@{/admin/add}" th:object="${newTour}" method="post">
+
+        <div class="row">
+            <div class="col-25">
+                <label >Tytuł</label>
+            </div>
+            <div class="col-75">
+                <input type="text" placeholder="Podaj tytuł.." class="form-control" th:field="*{title}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label >Kierunek podróży</label>
+            </div>
+            <div class="col-75">
+                <input type="text" placeholder="Podaj kraj.." class="form-control" th:field="*{country}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label >Miasto</label>
+            </div>
+            <div class="col-75">
+                <input type="text" placeholder="Podaj miasto.." class="form-control" th:field="*{destinationCity}">
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-25">
+                <label >Wyjazd od</label>
+            </div>
+            <div class="col-75">
+                <input type="date" placeholder="Wyjazd od.."  class="form-control"  th:field="*{dateFrom}" >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label >Powrót przed</label>
+            </div>
+            <div class="col-75">
+                <input type="date" placeholder="Powrót przed.." class="form-control"  th:field="*{dateTo}"  >
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label >Cena</label>
+            </div>
+            <div class="col-75">
+                <input type="text" placeholder="Podaj cenę.." class="form-control" th:field="*{price}">
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Potwierdź zgłoszenie" class="form-control" id="btn1">
+        </div>
+    </form>
+
+</div>
+<br>
+<br>
+</body>
+<br>
+</body>
+</html>
